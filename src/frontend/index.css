@@ -1,0 +1,376 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Sora";
+  src: url("/assets/fonts/Sora.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 100 800;
+}
+
+@font-face {
+  font-family: "Mona Sans";
+  src: url("/assets/fonts/MonaSans.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 200 900;
+  font-style: normal;
+}
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Zeiiyu Dark Theme — Obsidian / Gold / Copper */
+    --background: 0.08 0.010 50;
+    --foreground: 0.96 0.008 50;
+    --card: 0.11 0.014 50;
+    --card-foreground: 0.96 0.008 50;
+    --popover: 0.11 0.014 50;
+    --popover-foreground: 0.96 0.008 50;
+    --primary: 0.72 0.22 75;
+    --primary-foreground: 0.07 0.010 50;
+    --secondary: 0.14 0.020 50;
+    --secondary-foreground: 0.96 0.008 50;
+    --muted: 0.16 0.014 50;
+    --muted-foreground: 0.56 0.012 50;
+    --accent: 0.62 0.20 45;
+    --accent-foreground: 0.07 0.010 50;
+    --destructive: 0.62 0.22 25;
+    --destructive-foreground: 0.96 0.008 50;
+    --border: 0.22 0.020 50;
+    --input: 0.18 0.020 50;
+    --ring: 0.72 0.22 75;
+
+    /* Brand tokens */
+    --cyan: 0.72 0.22 75;
+    --cyan-glow: 0 0 20px oklch(0.72 0.22 75 / 0.6), 0 0 40px oklch(0.72 0.22 75 / 0.3);
+    --violet: 0.62 0.20 45;
+    --violet-glow: 0 0 20px oklch(0.62 0.20 45 / 0.6), 0 0 40px oklch(0.62 0.20 45 / 0.3);
+    --amber: 0.62 0.20 45;
+
+    --sidebar: 0.10 0.014 50;
+    --sidebar-foreground: 0.96 0.008 50;
+    --sidebar-primary: 0.72 0.22 75;
+    --sidebar-primary-foreground: 0.07 0.010 50;
+    --sidebar-accent: 0.14 0.020 50;
+    --sidebar-accent-foreground: 0.96 0.008 50;
+    --sidebar-border: 0.22 0.020 50;
+    --sidebar-ring: 0.72 0.22 75;
+
+    --chart-1: 0.72 0.22 75;
+    --chart-2: 0.62 0.20 45;
+    --chart-3: 0.62 0.22 25;
+    --chart-4: 0.62 0.20 45;
+    --chart-5: 0.68 0.18 90;
+  }
+
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Sora", system-ui, sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer components {
+  .glow-cyan {
+    box-shadow: 0 0 20px oklch(0.72 0.22 75 / 0.5), 0 0 40px oklch(0.72 0.22 75 / 0.25);
+  }
+
+  .glow-violet {
+    box-shadow: 0 0 20px oklch(0.62 0.20 45 / 0.5), 0 0 40px oklch(0.62 0.20 45 / 0.25);
+  }
+
+  .glow-amber {
+    box-shadow: 0 0 15px oklch(0.62 0.20 45 / 0.6), 0 0 30px oklch(0.62 0.20 45 / 0.3);
+  }
+
+  .text-glow-cyan {
+    text-shadow: 0 0 20px oklch(0.72 0.22 75 / 0.8), 0 0 40px oklch(0.72 0.22 75 / 0.4);
+  }
+
+  .card-glass {
+    background: oklch(0.11 0.014 50 / 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid oklch(0.72 0.22 75 / 0.07);
+    transition: border-color 0.35s ease, box-shadow 0.35s ease;
+  }
+
+  .card-glass:hover {
+    border-color: oklch(0.72 0.22 75 / 0.5);
+    box-shadow:
+      0 0 0 1px oklch(0.72 0.22 75 / 0.08),
+      0 0 24px oklch(0.72 0.22 75 / 0.18),
+      0 0 60px oklch(0.72 0.22 75 / 0.06);
+  }
+
+  /* Signature glow card — for focal CTA / partnership */
+  .card-signature {
+    background: oklch(0.105 0.016 50 / 0.85);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid oklch(0.72 0.22 75 / 0.22);
+    box-shadow:
+      0 0 0 1px oklch(0.72 0.22 75 / 0.05),
+      0 0 40px oklch(0.72 0.22 75 / 0.12),
+      0 0 80px oklch(0.62 0.20 45 / 0.06),
+      inset 0 1px 0 oklch(0.72 0.22 75 / 0.08);
+    transition: box-shadow 0.4s ease, border-color 0.4s ease;
+  }
+
+  .card-signature:hover {
+    border-color: oklch(0.72 0.22 75 / 0.45);
+    box-shadow:
+      0 0 0 1px oklch(0.72 0.22 75 / 0.12),
+      0 0 60px oklch(0.72 0.22 75 / 0.22),
+      0 0 120px oklch(0.62 0.20 45 / 0.10),
+      inset 0 1px 0 oklch(0.72 0.22 75 / 0.12);
+  }
+
+  .btn-primary-glow {
+    background: oklch(0.72 0.22 75);
+    color: oklch(0.07 0.010 50);
+    font-weight: 700;
+    box-shadow: 0 0 20px oklch(0.72 0.22 75 / 0.5), 0 0 40px oklch(0.72 0.22 75 / 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary-glow:hover {
+    box-shadow: 0 0 30px oklch(0.72 0.22 75 / 0.8), 0 0 60px oklch(0.72 0.22 75 / 0.4);
+    transform: translateY(-1px);
+  }
+
+  .btn-outline-glow {
+    background: transparent;
+    color: oklch(0.72 0.22 75);
+    font-weight: 600;
+    border: 1.5px solid oklch(0.72 0.22 75 / 0.6);
+    box-shadow: 0 0 12px oklch(0.72 0.22 75 / 0.2), inset 0 0 12px oklch(0.72 0.22 75 / 0.05);
+    transition: all 0.3s ease;
+  }
+
+  .btn-outline-glow:hover {
+    border-color: oklch(0.72 0.22 75);
+    box-shadow: 0 0 24px oklch(0.72 0.22 75 / 0.5), inset 0 0 20px oklch(0.72 0.22 75 / 0.1);
+    transform: translateY(-1px);
+  }
+
+  /* ── Typography tiers ── */
+  .section-heading {
+    font-family: "Mona Sans", "Sora", sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.08;
+  }
+
+  /* Primary editorial headings — used for Vision, Innovation hero */
+  .section-heading-xl {
+    font-family: "Mona Sans", "Sora", sans-serif;
+    font-weight: 900;
+    letter-spacing: -0.045em;
+    line-height: 1.0;
+  }
+
+  /* Section eyebrow label — refined */
+  .section-kicker {
+    font-family: "Sora", sans-serif;
+    font-size: 0.6875rem; /* 11px */
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .fade-in-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .fade-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .fade-in-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .fade-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .noise-overlay {
+    position: relative;
+  }
+
+  .noise-overlay::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+}
+
+@layer utilities {
+  .text-cyan-brand {
+    color: oklch(0.72 0.22 75);
+  }
+
+  .text-violet-brand {
+    color: oklch(0.62 0.20 45);
+  }
+
+  .text-amber-brand {
+    color: oklch(0.62 0.20 45);
+  }
+
+  .border-cyan-glow {
+    border-color: oklch(0.72 0.22 75 / 0.4);
+  }
+
+  .bg-cyan-glow-sm {
+    background: oklch(0.72 0.22 75 / 0.08);
+  }
+
+  .bg-amber-brand {
+    background: oklch(0.62 0.20 45);
+  }
+}
+
+/* Animated flow line for technology section */
+@keyframes flow-dash {
+  from {
+    stroke-dashoffset: 200;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes rotate-slow {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+
+@keyframes progress-fill {
+  from { width: 0%; }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes scan-line {
+  0% { transform: translateY(-100%); opacity: 0; }
+  10% { opacity: 0.5; }
+  90% { opacity: 0.5; }
+  100% { transform: translateY(400%); opacity: 0; }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-gradient-shift {
+  animation: gradient-shift 8s ease infinite;
+  background-size: 200% 200%;
+}
+
+/* ── Section glow divider ── */
+.section-divider {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    oklch(0.72 0.22 75 / 0.18) 25%,
+    oklch(0.62 0.20 45 / 0.25) 50%,
+    oklch(0.72 0.22 75 / 0.18) 75%,
+    transparent 100%
+  );
+  position: relative;
+}
+
+.section-divider::after {
+  content: "";
+  position: absolute;
+  inset: -1px 20% -1px 20%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    oklch(0.72 0.22 75 / 0.4),
+    transparent
+  );
+  filter: blur(6px);
+}
+
+/* ── Vision section deep atmosphere ── */
+.vision-atmosphere {
+  background:
+    radial-gradient(ellipse 55% 65% at 30% 40%, oklch(0.72 0.22 75 / 0.065) 0%, transparent 55%),
+    radial-gradient(ellipse 45% 55% at 75% 65%, oklch(0.62 0.20 45 / 0.07) 0%, transparent 55%),
+    radial-gradient(ellipse 80% 40% at 50% 100%, oklch(0.62 0.20 45 / 0.04) 0%, transparent 60%),
+    oklch(0.065 0.014 50);
+}
+
+/* ── Hero mesh atmosphere ── */
+.hero-atmosphere {
+  background:
+    radial-gradient(ellipse 70% 60% at 65% 45%, oklch(0.72 0.22 75 / 0.04) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at 30% 70%, oklch(0.62 0.20 45 / 0.05) 0%, transparent 55%),
+    oklch(0.065 0.014 50);
+}
