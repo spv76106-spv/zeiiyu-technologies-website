@@ -6,8 +6,7 @@ const pillars = [
     number: "01",
     icon: Fingerprint,
     title: "Human Signal Sensing",
-    description:
-      "Biometric and physiological data captured through integrated sensors at the palm and finger contact surface.",
+    description: "Biometric and Physiological signal captured.",
     color: "#d4960a",
   },
   {
@@ -15,7 +14,7 @@ const pillars = [
     icon: Cpu,
     title: "AI Signal Processing",
     description:
-      "Edge AI processes raw bioelectric signals in real-time with sub-100ms latency — no cloud dependency.",
+      "Edge AI intelligently analyses physiological signals in real time — entirely on-device with no cloud dependency.",
     color: "#b07d0e",
   },
   {

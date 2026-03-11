@@ -424,19 +424,19 @@ function AboutSection() {
       icon: Activity,
       title: "Physiological Sensing",
       description:
-        "Advanced multi-modal sensors capture galvanic skin response, heart rate variability, and micro-tremor signals from palm contact.",
+        "Proprietary sensing technology that detects subtle physiological signals through natural human contact.",
     },
     {
       icon: Cpu,
       title: "Embedded Electronics",
       description:
-        "Ultra-low-power sensor fusion circuits and SoC designs optimized for seamless integration into everyday form factors.",
+        "Custom-engineered electronics architecture designed for discreet, everyday integration.",
     },
     {
       icon: Brain,
       title: "AI Signal Processing",
       description:
-        "On-device machine learning models trained on physiological signal datasets to extract meaningful emotional biomarkers.",
+        "Proprietary AI models that process physiological signals locally and intelligently.",
     },
     {
       icon: Heart,
@@ -575,25 +575,25 @@ function InnovationSection() {
       icon: Fingerprint,
       title: "Advanced Physiological Sensing",
       description:
-        "Captures galvanic skin response, micro-tremors, and temperature gradients through the phone case surface.",
+        "Detects meaningful physiological indicators through natural contact with the case surface.",
     },
     {
       icon: Zap,
       title: "Real-Time Emotional Signal Detection",
       description:
-        "Sub-100ms detection latency using on-device neural inference — no data leaves the device.",
+        "Ultra-fast signal analysis is performed entirely on-device, ensuring complete privacy with no external data transmission.",
     },
     {
       icon: Lock,
       title: "Privacy-Focused AI Processing",
       description:
-        "All signal processing runs on-device. Your emotional data never touches external servers.",
+        "All processing occurs locally on the device — your personal data remains entirely private and secure at all times.",
     },
     {
       icon: Smartphone,
       title: "Seamless Smartphone Integration",
       description:
-        "Designed to integrate invisibly with existing smartphones via Bluetooth and the case's onboard MCU.",
+        "Engineered for seamless compatibility with existing smartphones through our proprietary wireless integration technology.",
     },
   ];
 
