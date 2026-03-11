@@ -255,6 +255,7 @@ function HeroSection() {
     >
       {/* Three.js canvas */}
       <div className="absolute inset-0 z-0">
+       <img src="/assets/logo.png" alt="Zeiiyu Logo" style={{ width: 140, margin: "20px" }} />
         <HeroScene />
       </div>
 
